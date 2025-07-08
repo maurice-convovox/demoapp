@@ -1,4 +1,4 @@
-# Transmit Security sso-test-ao Journey Implementation
+# Transmit Security sso-page Journey Implementation
 
 ## Overview
 
