@@ -18,9 +18,16 @@ export const brandingThemes: BrandingTheme = {
         backgroundColor: '#f5f6f7', // Light gray background
         headerBackground: '#ffffff',
         logoUrl: '/admiral.svg',
-        companyName: 'Admiral',
-        fontFamily: '"Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-    },
+        companyName: 'For Car, Home and Van customers, login below to manage your cover',
+        fontFamily: '"Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+        styles: {
+            companyName: {
+                fontSize: '20px',
+                color: '#0045A0'
+            }
+        }
+    }
+    ,
     company2: {
         primaryColor: '#ff0000',
         secondaryColor: '#000000',

@@ -1,4 +1,5 @@
 export interface BrandingConfig {
+    styles: any;
     primaryColor: string;
     secondaryColor: string;
     backgroundColor: string;

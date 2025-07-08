@@ -65,7 +65,11 @@ export class BrandingService {
         const companyNameElements = document.querySelectorAll<HTMLElement>('.company-name');
         companyNameElements.forEach(element => {
             element.textContent = this.currentBranding.companyName;
+            if (this.currentBranding.styles?.companyName) {
+                Object.assign(element.style, this.currentBranding.styles.companyName);
+            }
         });
+
     }
 
 }
