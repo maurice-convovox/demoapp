@@ -6,7 +6,8 @@ export const defaultBranding: BrandingConfig = {
     secondaryColor: '#6c757d',
     backgroundColor: '#ffffff',
     logoUrl: '/default-logo.png',
-    companyName: 'Default Company'
+    companyName: 'Default Company',
+    styles: undefined
 };
 
 export const brandingThemes: BrandingTheme = {
@@ -26,9 +27,9 @@ export const brandingThemes: BrandingTheme = {
                 color: '#0045A0'
             }
         }
-    }
-    ,
+    },
     company2: {
+        styles:{},
         primaryColor: '#ff0000',
         secondaryColor: '#000000',
         logoUrl: '/company1-logo.png',

@@ -87,10 +87,6 @@ export function addClickListener(selector: string, callback: (e: Event) => void)
   }
 }
 
-// export function addClickListener(selector: string, callback: (e: Event) => void) {
-//   addEventListener(selector, 'click', callback);
-// }
-
 export function getInputValue(selector: string) {
   return getElement<HTMLInputElement | HTMLTextAreaElement>(selector)?.value.trim();
 }
