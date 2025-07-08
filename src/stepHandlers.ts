@@ -10,6 +10,10 @@ import { DisplayInformationStepHandler } from "./steps/displayInformationStepHan
 import { EmailOTPAuthenticationStepHandler } from "./steps/emailOTPAuthenticationStepHandler.ts";
 import { FormGetInfoFromClient1StepHandler } from './steps/formGetInfoFromClient1StepHandler';
 import { FormLoginForm1StepHandler } from './steps/formLoginForm1StepHandler';
+import { SmsOTPAuthenticationStepHandler } from './steps/smsOTPAuthenticationStepHandler';
+import { RiskRecommendationsStepHandler } from './steps/riskRecommendationsStepHandler';
+import { DocumentVerificationHostedStepHandler } from './steps/documentVerificationHostedStepHandler';
+import { RegisterPasskeysStepHandler } from './steps/registerPasskeysStepHandler';
 
 export const UiStepType = {
   ...IdoJourneyActionType,
@@ -34,4 +38,8 @@ export const StepHandlers: { [key: string]: StepHandler } = {
   [UiStepType['Login']]: new FormLoginStepHandler(),
   [UiStepType['GetInfoFromClient1']]: new FormGetInfoFromClient1StepHandler(),
   [UiStepType['LoginForm1']]: new FormLoginForm1StepHandler(),
+  [UiStepType['SmsOTPAuthentication']]: new SmsOTPAuthenticationStepHandler(),
+  [UiStepType['DrsTriggerAction']]: new RiskRecommendationsStepHandler(),
+  [UiStepType['IdentityVerification']]: new DocumentVerificationHostedStepHandler(),
+  [UiStepType['WebAuthnRegistration']]: new RegisterPasskeysStepHandler(),
 };
