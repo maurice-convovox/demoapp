@@ -1,0 +1,47 @@
+<!doctype html>
+<html style="display: none">
+  <head>
+    <link rel="icon" type="image/svg+xml" href="/acme-icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACME</title>
+
+    <script
+      src="https://platform-websdk.transmitsecurity.io/platform-websdk/latest/ts-platform-websdk.js"
+      id="platform-sdk"
+      defer="true"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/gh/shuqikhor/Vanilla-OTP-Input@main/vanilla-otp.min.js"></script>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="row">
+          <img class="logo" src="/default-logo.png" alt="Company logo">
+          <h1 class="company-name">Default Company</h1>
+
+          <div id="journey-name" class="kvp-label">
+            <div class="key">Journey name:</div>
+            <div class="value">sso-test-ao</div>
+          </div>
+        </div>
+        <div class="row">
+          <div id="debug-pin" class="kvp-label"></div>
+          <button id="restart-button" class="tertiary"><img src="/restart.svg" />Restart</button>
+        </div>
+      </header>
+      <main>
+        <div id="app"></div>
+      </main>
+      <footer>
+        <img src="/transmit-logo.svg" />
+      </footer>
+    </div>
+    <div id="overlays"></div>
+  </body>
+</html>
