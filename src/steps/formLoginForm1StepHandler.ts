@@ -86,9 +86,6 @@ export class FormLoginForm1StepHandler implements StepHandler {
           </div>
         </div>
       </div>
-      <div id="button-links-wrapper" class="row">
-        <button class="secondary full-width" id="submit-branch_1">Register Now</button>
-      </div>
       <div id="step-error" class="alert error"></div>
     ` /* HTML-END */);
   }
@@ -110,7 +107,6 @@ export class FormLoginForm1StepHandler implements StepHandler {
 
     this.setupFormLinkListeners('password', submitStep);
     this.setupFormLinkListeners('passkeys', submitStep);
-    this.setupButtonLinkListeners('branch_1', submitStep);
 
     if (input?.data?.error_data && input.data.error_data !== 'null') {
       commonHelpers.getElement<HTMLDivElement>(`#step-error`)!.innerHTML = input.data.error_data;
@@ -152,26 +148,11 @@ export class FormLoginForm1StepHandler implements StepHandler {
     }
   }
 
-
   private setupFormLinkListeners(formId: string, submitStep: StepResolver) {
-    const form = commonHelpers.getElement<HTMLFormElement>(`#form-${formId}`);
-    if (!form) {
-      return;
-    }
-
-    // Only prevent form submission - remove other event preventions
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-    });
-
-    // Handle submission through submit button
-    const submitButton = commonHelpers.getElement<HTMLButtonElement>(`#submit-${formId}`);
-    if (submitButton) {
-      submitButton.addEventListener('click', async (e) => {
-        e.preventDefault();
-
-        if (!form) return;
-
+    commonHelpers.addLoadingButtonClickListener(
+      `#form-${formId}`,
+      async () => {
+        const form = commonHelpers.getElement<HTMLFormElement>(`#form-${formId}`);
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
 
@@ -192,20 +173,9 @@ export class FormLoginForm1StepHandler implements StepHandler {
           options: this.getClientResponseOptions(formId),
           data,
         });
-      });
-    }
-  }
-
-
-  private setupButtonLinkListeners(buttonId: string, submitStep: StepResolver) {
-    commonHelpers.addLoadingButtonClickListener(`#submit-${buttonId}`, () => {
-      window.tsPlatform.webauthn.authenticate.autofill.abort();
-
-      submitStep({
-        options: this.getClientResponseOptions(buttonId),
-        data: {},
-      });
-    });
+      },
+      'submit',
+    );
   }
 
   /**
@@ -231,10 +201,10 @@ export class FormLoginForm1StepHandler implements StepHandler {
     if (input.journeyStepId === formId && input.data?.form_schema) {
       field = input.data.form_schema.find((f: any) => f.name === fieldName);
     } else if (input.clientResponseOptions) {
-      // const branch = input.clientResponseOptions[`${formId}`];
-      // if (branch?.schema) {
-      //   field = branch.schema.find((f: any) => f.name === fieldName);
-      // }
+      const branch = input.clientResponseOptions[`${formId}`];
+      if (branch?.schema) {
+        field = branch.schema.find((f: any) => f.name === fieldName);
+      }
     }
 
     return field?.[`${property}`];

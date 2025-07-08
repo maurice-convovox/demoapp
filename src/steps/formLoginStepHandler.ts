@@ -93,25 +93,12 @@ export class FormLoginStepHandler implements StepHandler {
           const formData = new FormData(form);
           const data = Object.fromEntries(formData.entries());
 
-          window.tsPlatform.webauthn.authenticate.autofill.abort();
-
-          if (formId === 'passkeys') {
-            const username = commonHelpers.getInputValue('#passkey-input');
-
-            try {
-              const webauthn_encoded_result = await window.tsPlatform.webauthn.authenticate.modal(username);
-              data.webauthn_encoded_result = webauthn_encoded_result;
-            } catch (error) {
-              data.webauthn_encoded_result = '';
-            }
-          }
-
           submitStep({
             options: this.getClientResponseOptions(formId),
             data,
           });
         }
-    );  // Remove the 'submit' parameter since we're targeting the button directly
+    );
   }
 
   private getClientResponseOptions(alternateBranchId: string) {

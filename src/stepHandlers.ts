@@ -6,8 +6,8 @@ import { RejectAccessStepHandler } from './steps/rejectAccessStepHandler';
 import { DebugBreakpointStepHandler } from './steps/debugBreakpointStepHandler';
 import { CompleteJourneyStepHandler } from './steps/completeJourneyStepHandler';
 import { FormLoginStepHandler } from './steps/formLoginStepHandler';
-import {DisplayInformationStepHandler} from "./steps/displayInformationStepHandler.ts";
-import {EmailOTPAuthenticationStepHandler} from "./steps/emailOTPAuthenticationStepHandler.ts";
+import { DisplayInformationStepHandler } from "./steps/displayInformationStepHandler.ts";
+import { EmailOTPAuthenticationStepHandler } from "./steps/emailOTPAuthenticationStepHandler.ts";
 import { FormGetInfoFromClient1StepHandler } from './steps/formGetInfoFromClient1StepHandler';
 import { FormLoginForm1StepHandler } from './steps/formLoginForm1StepHandler';
 

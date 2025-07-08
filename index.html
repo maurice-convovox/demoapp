@@ -11,9 +11,9 @@
     <title>ACME</title>
 
     <script
-      src="https://platform-websdk.transmitsecurity.io/platform-websdk/latest/ts-platform-websdk.js"
-      id="platform-sdk"
-      defer="true"
+            src="https://platform-websdk.transmitsecurity.io/platform-websdk/latest/ts-platform-websdk.js"
+            id="platform-sdk"
+            defer="true"
     ></script>
     <script src="https://cdn.jsdelivr.net/gh/shuqikhor/Vanilla-OTP-Input@main/vanilla-otp.min.js"></script>
     <script type="module" src="/src/main.ts"></script>
@@ -26,13 +26,10 @@
           <h1 class="company-name">Default Company</h1>
 
           <div id="journey-name" class="kvp-label">
-            <div class="key">Journey name:</div>
-            <div class="value">sso-test-ao</div>
           </div>
         </div>
         <div class="row">
-          <div id="debug-pin" class="kvp-label"></div>
-          <button id="restart-button" class="tertiary"><img src="/restart.svg" />Restart</button>
+          <div style="visibility: hidden"  id="debug-pin" class="kvp-label"></div>
         </div>
       </header>
       <main>

@@ -1,5 +1,5 @@
 import { StepHandlers, UiStepType } from './stepHandlers';
-import {addClickListener, getElement, restartApp} from './common';
+import { getElement } from './common';
 import { config } from './config';
 import { brandingService } from './config/brandingService'
 
@@ -10,15 +10,15 @@ document.addEventListener('DOMContentLoaded', async function () {
   await startOrResumeJourney();
 });
 
-addClickListener('#restart-button', () => {
-  restartApp();
-});
-
 function initializeSdk() {
   window.tsPlatform.initialize({
     clientId: `${config.clientId}`,
+    webauthn: {
+      serverPath: `${config.webauthnServerUrl}`,
+    },
     ido: { serverPath: `${config.idoServerUrl}`, applicationId: `${config.appId}` },
     drs: {
+      serverPath: `${config.drsServerUrl}`,
       enabled: true,
     },
   });

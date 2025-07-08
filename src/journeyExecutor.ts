@@ -10,6 +10,7 @@ export class JourneyExecutor {
 
     try {
       const interactionId = (new URLSearchParams(window.location.search)).get("src_interaction");
+      // @ts-ignore
       const idoResponse = await window.tsPlatform.ido.startSsoJourney(interactionId);
       //const idoResponse = await window.tsPlatform.ido.startJourney(config.journeyName, { additionalParams });
       let debugPin: string | undefined;

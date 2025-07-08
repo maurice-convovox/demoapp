@@ -13,8 +13,8 @@ export const brandingThemes: BrandingTheme = {
     default: defaultBranding,
     // Add more branded themes here
     uEBeWCTPAhSezTSMTzQkd: {
-        primaryColor: '#012169', // Admiral navy blue
-        secondaryColor: '#ffffff',
+        primaryColor: '#012169', // Admiral navy blue for primary brand color and forms
+        secondaryColor: '#0A8A19', // Admiral green for buttons
         backgroundColor: '#f5f6f7', // Light gray background
         headerBackground: '#ffffff',
         logoUrl: '/admiral.svg',

@@ -7,7 +7,9 @@ export class CompleteJourneyStepHandler implements StepHandler {
   private readonly BUTTON_ID = 'restart_button';
 
   public async handle(idoServiceResponse: IdoServiceResponse): Promise<StepResponse | void> {
+    // @ts-ignore
     if (idoServiceResponse.redirectUrl) {
+      // @ts-ignore
       window.location.href = idoServiceResponse.redirectUrl;
       return;
     }
