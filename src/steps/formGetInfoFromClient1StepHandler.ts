@@ -42,6 +42,30 @@ export class FormGetInfoFromClient1StepHandler implements StepHandler {
               : ''}</label
           >
         </div>
+        <div class="input-container">
+          <input
+            type="password"
+            id="get_info_from_client_1_userPassword"
+            name="userPassword"
+            ${this.getAuthScriptValueFromIdoResponse(input, 'get_info_from_client_1', 'userPassword', 'required')
+              ? 'required'
+              : ''}
+            ${this.getAuthScriptValueFromIdoResponse(input, 'get_info_from_client_1', 'userPassword', 'readonly')
+              ? 'readonly'
+              : ''}
+            placeholder=" "
+          />
+          <label for="get_info_from_client_1_userPassword"
+            >password${this.getAuthScriptValueFromIdoResponse(
+              input,
+              'get_info_from_client_1',
+              'userPassword',
+              'required',
+            )
+              ? '*'
+              : ''}</label
+          >
+        </div>
         <button type="submit" id="submit-get_info_from_client_1" class="full-width">Submit</button>
       </form>
       <div id="step-error" class="alert error"></div>
