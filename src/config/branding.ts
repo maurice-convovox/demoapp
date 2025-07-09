@@ -28,13 +28,21 @@ export const brandingThemes: BrandingTheme = {
             }
         }
     },
-    company2: {
-        styles:{},
-        primaryColor: '#ff0000',
-        secondaryColor: '#000000',
-        logoUrl: '/company1-logo.png',
-        companyName: 'Company two',
-        backgroundColor: ''
+    confused: {
+        primaryColor: '#00adef', // Confused.com's primary blue
+        secondaryColor: '#000000', // Confused.com's orange accent
+        backgroundColor: '#ffffff', // White background
+        headerBackground: '#000000',
+        logoUrl: '/confused.svg', // Make sure to add the actual logo file
+        companyName: 'Sign in or create an account',
+        fontFamily: '"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+        styles: {
+            companyName: {
+                fontSize: '20px',
+                color: '#FFFFFF'
+            }
+        }
+
     }
 };
 
